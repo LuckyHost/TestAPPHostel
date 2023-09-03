@@ -3,8 +3,11 @@ package com.example.testapphostel.present.UI
 import android.icu.text.*
 import android.icu.util.*
 import android.util.*
+import android.widget.*
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.*
+import androidx.compose.foundation.lazy.grid.*
 import androidx.compose.foundation.pager.*
 import androidx.compose.foundation.shape.*
 import androidx.compose.material3.*
@@ -13,11 +16,17 @@ import androidx.compose.ui.*
 import androidx.compose.ui.draw.*
 import androidx.compose.ui.graphics.*
 import androidx.compose.ui.graphics.painter.*
+import androidx.compose.ui.graphics.vector.*
+import androidx.compose.ui.platform.*
 import androidx.compose.ui.res.*
 import androidx.compose.ui.text.font.*
 import androidx.compose.ui.tooling.preview.*
 import androidx.compose.ui.unit.*
+import androidx.navigation.*
+import androidx.navigation.compose.*
+import coil.*
 import coil.compose.*
+import coil.decode.*
 import com.example.testapphostel.R
 import com.example.testapphostel.data.*
 import com.example.testapphostel.data.NET.*
@@ -25,35 +34,45 @@ import com.example.testapphostel.domian.DataClass.*
 import com.example.testapphostel.present.*
 import com.example.testapphostel.present.UI.theme.*
 import com.skydoves.sandwich.*
+import kotlinx.coroutines.*
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun ItemHotel(
-    viewModel: ViewModel,
+    viewModel: ViewModel,navController: NavController
 ) {
 
-    val listImages = viewModel.listImages.collectAsState(initial = emptyList())
+    val listImages = viewModel.listImages.collectAsState()
+    val item = viewModel.hostel.collectAsState()
     val pagerState = rememberPagerState()
-    val item = viewModel.hostel.collectAsState(null)
-    val price = remember { mutableStateOf("")    }
+    val price = remember { mutableStateOf("") }
+    val scrollState = rememberScrollState()
+    val context = LocalContext.current
 
 
 
 
-    Box(modifier = Modifier.fillMaxSize()) {
+    Column(
+        modifier = Modifier.verticalScroll(rememberScrollState())
+    )
+    {
         Column {
 
 
             Card(
                 modifier = Modifier
                     .fillMaxWidth(1f)
-                    .padding(top = 5.dp, bottom = 5.dp)
-                    ,elevation= CardDefaults.cardElevation(5.dp)
-            ) {
+                    .padding(top = 5.dp, bottom = 5.dp),
+                shape = RoundedCornerShape(topStart = 50.dp, topEnd = 50.dp, bottomStart = 15.dp, bottomEnd = 15.dp),
+                elevation = CardDefaults.cardElevation(5.dp)
+            )
+            {
                 Column {
-                    Box(modifier = Modifier
-                        .padding(bottom = 15.dp)
-                        .fillMaxHeight(0.28f))
+                    Box(
+                        modifier = Modifier
+                            .padding(bottom = 15.dp)
+                            .fillMaxHeight(0.28f)
+                    )
                     {
 
                         HorizontalPager(
@@ -69,10 +88,11 @@ fun ItemHotel(
                                 contentDescription = null,
                                 modifier = Modifier
                                     .padding(start = 10.dp, end = 10.dp, top = 10.dp)
-                                    .clip(RoundedCornerShape(8))
-                                    ,
+                                    .clip(RoundedCornerShape(8)),
                                 placeholder = painterResource(androidx.core.R.drawable.ic_call_answer_video_low)
                             )
+
+
                             Log.d("MyLog", "ItemHotel.kt. ItemHotel: ${listImages.value}")
                         }
 
@@ -118,22 +138,23 @@ fun ItemHotel(
                             .padding(20.dp, end = 20.dp)
                             .clip(RoundedCornerShape(25))
                             .height(30.dp)
-                            .background(Yealo), contentAlignment = Alignment.Center
+                            .background(Rating), contentAlignment = Alignment.Center
                     ) {
                         Row {
                             Icon(
-                                painter = painterResource(R.drawable.baseline_star_rate_24),
+                                painter = painterResource(R.drawable.star),
                                 contentDescription = null,
                                 modifier = Modifier
                                     .size(25.dp)
                                     .padding(start = 5.dp),
-                                tint = Or
+                                tint = RatingText
                             )
 
                             Text(
                                 text = item.value?.rating?.toString() ?: "5",
                                 fontSize = 16.sp,
                                 fontWeight = FontWeight.ExtraLight,
+                                color = RatingText,
                                 modifier = Modifier
                                     .padding(start = 2.dp)
                             )
@@ -141,6 +162,7 @@ fun ItemHotel(
                                 text = item.value?.rating_name ?: "Превосходно",
                                 fontSize = 16.sp,
                                 fontWeight = FontWeight.ExtraLight,
+                                color = RatingText,
                                 modifier = Modifier
                                     .padding(start = 5.dp, end = 5.dp)
                             )
@@ -158,10 +180,15 @@ fun ItemHotel(
                         text = item.value?.adress
                             ?: "Madinat Makadi, Safaga Road, Makadi Bay, Египет",
                         fontSize = 15.sp,
-                        color = Addres,
+                        color = Blue,
                         fontWeight = FontWeight.ExtraLight,
                         modifier = Modifier
                             .padding(start = 16.dp, top = 5.dp)
+                            .clickable {
+                                Toast
+                                    .makeText(context, "Переход", Toast.LENGTH_LONG)
+                                    .show()
+                            }
                     )
                     Row(
                         verticalAlignment = Alignment.CenterVertically,
@@ -194,25 +221,241 @@ fun ItemHotel(
                 modifier = Modifier
                     .fillMaxWidth(1f)
 //                    .fillMaxHeight(0.5f)
-                    .padding(top = 5.dp, bottom = 5.dp)
-                ,elevation= CardDefaults.cardElevation(5.dp)
-            ) {
+                    .padding(top = 5.dp),
+                elevation = CardDefaults.cardElevation(5.dp)
+            )
+            {
                 Column {
                     Text(
                         modifier = Modifier
-                            .padding(start = 14.dp),
-                        text = "Об отеле:",
+                            .padding(start = 14.dp,top=15.dp),
+                        text = "Об отеле",
                         fontSize = 25.sp, fontWeight = FontWeight.Medium
                     )
+                    Box(
+                        Modifier
+                            .fillMaxHeight(0.01f)
+                            .padding(start = 15.dp, end = 15.dp)
+                    )
+                    {
+                        LazyRow() {
+                            val list = item.value?.about_the_hotel?.peculiarities ?: listOf(
+                                "Бесплатный Wifi на всей территории отеля",
+                                "1 км до пляжа",
+                                "Бесплатный фитнес-клуб",
+                                "20 км до аэропорта"
+                            )
 
+                            items(list) {
+
+                                Card(
+                                    modifier = Modifier
+                                        .padding(5.dp),
+                                    elevation = CardDefaults.cardElevation(5.dp)
+                                )
+                                {
+                                    Text(
+                                        modifier = Modifier
+                                            .padding(5.dp)
+                                            .wrapContentWidth(align = Alignment.Start), text = it
+                                    )
+
+                                }
+                            }
+                        }
+                    }
+                }
+
+                Text(
+                    modifier = Modifier
+                        .padding(start = 15.dp, bottom = 15.dp),
+                    text = item.value?.about_the_hotel?.description
+                        ?: "Отель VIP-класса с собственными гольф полями. Высокий уровнь сервиса. Рекомендуем для респектабельного отдыха. Отель принимает гостей от 18 лет!",
+                    fontSize = 18.sp, fontWeight = FontWeight.W200
+                )
+
+                Card(
+                    modifier = Modifier
+                        .padding(start = 25.dp, bottom = 25.dp, end = 25.dp)
+                        .fillMaxWidth()
+                )
+                {
+                    Box(modifier = Modifier.fillMaxWidth())
+                    {
+                        Row(
+                            modifier = Modifier.fillMaxWidth(),
+                            horizontalArrangement = Arrangement.SpaceBetween,
+                            verticalAlignment = Alignment.CenterVertically
+                        )
+                        {
+
+                            Image(
+                                painter = painterResource(R.drawable.emoji_happy),
+                                contentDescription = null,
+                                modifier = Modifier.size(30.dp)
+                            )
+                            Box(
+                                modifier = Modifier
+                                    .fillMaxWidth(0.9f)
+                                    .padding(start = 10.dp)
+                            ) {
+
+                                Column {
+                                    Text(
+                                        text = "Удобство",
+                                        fontSize = 16.sp
+                                    )
+                                    Text(
+                                        color = Gray, text = "Самое необходимое"
+                                    )
+
+                                }
+                            }
+                            Image(
+                                painter = painterResource(R.drawable.vector_55),
+                                contentDescription = null,
+                                modifier = Modifier
+                                    .size(20.dp)
+                            )
+                        }
+                    }
+
+                    Box(modifier = Modifier.fillMaxWidth())
+                    {
+                        Row(
+                            modifier = Modifier.fillMaxWidth(),
+                            horizontalArrangement = Arrangement.SpaceBetween,
+                            verticalAlignment = Alignment.CenterVertically
+                        )
+                        {
+
+                            Image(
+                                painter = painterResource(R.drawable.tick_square),
+                                contentDescription = null,
+                                modifier = Modifier.size(30.dp)
+                            )
+                            Box(
+                                modifier = Modifier
+                                    .fillMaxWidth(0.9f)
+                                    .padding(start = 10.dp)
+                            ) {
+
+
+                                Column {
+                                    Text(
+                                        text = "Что включено",
+                                        fontSize = 16.sp
+                                    )
+                                    Text(
+                                        color = Gray, text = "Самое необходимое"
+                                    )
+
+                                }
+                            }
+                            Image(
+                                painter = painterResource(R.drawable.vector_55),
+                                contentDescription = null,
+                                modifier = Modifier
+                                    .size(20.dp)
+                            )
+                        }
+                    }
+                    Box(modifier = Modifier.fillMaxWidth())
+                    {
+                        Row(
+                            modifier = Modifier.fillMaxWidth(),
+                            horizontalArrangement = Arrangement.SpaceBetween,
+                            verticalAlignment = Alignment.CenterVertically
+                        )
+                        {
+
+                            Image(
+                                painter = painterResource(R.drawable.close_square),
+                                contentDescription = null,
+                                modifier = Modifier.size(30.dp)
+                            )
+                            Box(
+                                modifier = Modifier
+                                    .fillMaxWidth(0.9f)
+                                    .padding(start = 10.dp)
+                            ) {
+
+
+                                Column {
+                                    Text(
+                                        text = "Что не включено",
+                                        fontSize = 16.sp
+                                    )
+                                    Text(
+                                        color = Gray, text = "Самое необходимое"
+                                    )
+
+                                }
+                            }
+                            Image(
+                                painter = painterResource(R.drawable.vector_55),
+                                contentDescription = null,
+                                modifier = Modifier
+                                    .size(20.dp)
+                            )
+                        }
+                    }
 
                 }
+
 
             }
 
         }
+
+        Card(
+            modifier = Modifier
+                .fillMaxWidth(1f)
+//                    .fillMaxHeight(0.5f)
+                .padding(top = 15.dp, bottom = 5.dp),
+            shape = RoundedCornerShape(bottomStart = 50.dp, bottomEnd = 50.dp, topEnd = 15.dp , topStart = 15.dp),
+            elevation = CardDefaults.cardElevation(5.dp)
+        ) {
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .fillMaxHeight(0.25f)
+                    .padding(start = 20.dp, end = 20.dp, top = 15.dp, bottom = 15.dp),
+                contentAlignment = Alignment.Center
+            )
+            {
+                val customShape = RoundedCornerShape(
+                    topStart = 16.dp,
+                    topEnd = 16.dp,
+                    bottomStart = 16.dp,
+                    bottomEnd = 16.dp
+                )
+
+                val customColors = ButtonDefaults.buttonColors(
+                    containerColor = Blue,
+                    contentColor = Color.White
+                )
+
+                Button(modifier = Modifier
+                    .fillMaxWidth()
+                    .fillMaxHeight(),
+                    shape = customShape,
+                    colors = customColors,
+                    onClick = { navController.navigate("Room")})
+                {
+                    Text(
+                        text = "К выбору номера"
+                        , fontSize = 16.sp
+                    )
+
+                }
+            }
+
+        }
+
     }
-}
+    }
+
 
 @Preview(showBackground = true)
 @Composable
@@ -221,7 +464,8 @@ fun ItemHotelPreview() {
     val api = MockApi()
     val repository = MockRepository(api)
     val viewModel = MockViewModel(repository)
-    ItemHotel(viewModel)
+    var  navController=rememberNavController()
+    ItemHotel(viewModel, navController)
 }
 
 class MockRepository(apiService: APIService) : Repository(apiService) {

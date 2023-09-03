@@ -1,0 +1,105 @@
+{
+  "name": "button",
+  "version": 32,
+  "source-key": {
+    "type": "figma",
+    "file": "P72dG6udmwz3ggWSKBvqim",
+    "node": "629:2",
+    "version": "4096582728",
+    "component-id": "76036d6de65cc2901e12740ea139092eef71d1e3"
+  },
+  "default": "Button",
+  "documentation": "Text",
+  "design": {
+    "atoms": [
+      {
+        "type": "group",
+        "id": "top_level",
+        "root": "true"
+      }
+    ],
+    "modes": {
+      "Button": {
+        "rules": [
+          {
+            "id": "top_level",
+            "is-structured": "false",
+            "children": "$Button children",
+            "clip-content": "false"
+          }
+        ]
+      }
+    }
+  },
+  "parameters": {
+    "Button children": {
+      "data-type": "list-item",
+      "required": false,
+      "description": ""
+    }
+  },
+  "previews": [
+    {
+      "design": "Button",
+      "size": {
+        "width": 343.0,
+        "height": 52.0
+      },
+      "parameters": {
+        "Button children": [
+          {
+            "type": "vector",
+            "border-radius": 6.0,
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "rectangle_2.svg"
+          },
+          {
+            "type": "text",
+            "margin": {
+              "left": "125.28759765625",
+              "top": "19.0",
+              "right": "126.71240234375",
+              "bottom": "18.0"
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "font-weight": 900.0,
+            "color": {
+              "alpha": "1.0",
+              "hue": "0.0",
+              "saturation": "0.0",
+              "value": "1.0"
+            },
+            "text-content": "follow jane",
+            "overflow": "visible",
+            "text-align-vertical": "center",
+            "text-size": 13.0,
+            "letter-spacing": 0.52,
+            "line-height": 1.171875,
+            "case": "upper"
+          }
+        ]
+      }
+    }
+  ],
+  "adin-component-search-paths": [],
+  "image-search-paths": [],
+  "vector-search-paths": []
+}

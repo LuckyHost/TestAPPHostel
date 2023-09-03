@@ -1,0 +1,1342 @@
+{
+  "name": "frame_579",
+  "version": 32,
+  "source-key": {
+    "type": "figma",
+    "file": "UuuJog8nLviITB3ddlbVLN",
+    "node": "4:92",
+    "version": "4096621785",
+    "component-id": "bb5c36781ee7b2e9e469b7d115ec7693bdb403a3"
+  },
+  "default": "Frame 579",
+  "design": {
+    "atoms": [
+      {
+        "type": "group",
+        "id": "top_level",
+        "root": "true"
+      },
+      {
+        "type": "text",
+        "id": "Title"
+      },
+      {
+        "type": "group",
+        "id": "Frame 9"
+      },
+      {
+        "type": "group",
+        "id": "Frame 582"
+      },
+      {
+        "type": "text",
+        "id": "Title1"
+      }
+    ],
+    "modes": {
+      "Frame 579": {
+        "rules": [
+          {
+            "id": "top_level",
+            "border-radius": "12.0",
+            "is-structured": "false",
+            "children": [
+              "Title",
+              "Frame 9",
+              "Frame 582",
+              "Title1"
+            ],
+            "background-color": "$Frame 579 background color"
+          },
+          {
+            "id": "Title",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": "16.0"
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": "136.0"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "343.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "color": {
+              "alpha": "0.8980392156862745",
+              "hue": "0.0",
+              "saturation": "0.0",
+              "value": "0.0"
+            },
+            "text-content": "$Title text content2",
+            "overflow": "visible",
+            "max-lines": "-1",
+            "text-align": "left",
+            "text-size": "16.0",
+            "line-height": "1.2000000762939453",
+            "typeface": "SF Pro Display"
+          },
+          {
+            "id": "Frame 9",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": "16.0"
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": "58.0"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "295.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "arrangement": "row",
+            "main-axis-align": "start",
+            "cross-axis-align": "start",
+            "children": "$Frame 9 children",
+            "item-spacing": "8.0",
+            "clip-content": "false"
+          },
+          {
+            "id": "Frame 582",
+            "padding": "$Frame 582 padding",
+            "border-radius": "15.0",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": "16.0"
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": "228.0"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "main-axis-align": "start",
+            "cross-axis-align": "end",
+            "children": "$Frame 582 children",
+            "item-spacing": "10.0",
+            "background-color": {
+              "alpha": "1.0",
+              "hue": "240.0",
+              "saturation": "0.003968253968254066",
+              "value": "0.9882352941176471"
+            },
+            "clip-content": "false"
+          },
+          {
+            "id": "Title1",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": "16.0"
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": "16.0"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "343.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "font-weight": "500.0",
+            "color": {
+              "alpha": "1.0",
+              "hue": "0.0",
+              "saturation": "0.0",
+              "value": "0.0"
+            },
+            "text-content": "$Title text content",
+            "overflow": "visible",
+            "max-lines": "-1",
+            "text-align": "left",
+            "text-size": "22.0",
+            "line-height": "1.2000000762939453",
+            "typeface": "SF Pro Display"
+          }
+        ]
+      }
+    }
+  },
+  "parameters": {
+    "Frame 579 background color": {
+      "data-type": "color",
+      "required": false,
+      "description": ""
+    },
+    "Title text content2": {
+      "data-type": "text",
+      "required": false,
+      "description": ""
+    },
+    "Frame 9 children": {
+      "data-type": "list-item",
+      "required": false,
+      "description": ""
+    },
+    "Frame 582 children": {
+      "data-type": "list-item",
+      "required": false,
+      "description": ""
+    },
+    "Frame 582 padding": {
+      "data-type": "edge-data",
+      "required": false,
+      "description": ""
+    },
+    "Title text content": {
+      "data-type": "text",
+      "required": false,
+      "description": ""
+    }
+  },
+  "previews": [
+    {
+      "design": "Frame 579",
+      "size": {
+        "width": 375.0,
+        "height": 428.0
+      },
+      "parameters": {
+        "Frame 579 background color": {
+          "alpha": "1.0",
+          "hue": "0.0",
+          "saturation": "0.0",
+          "value": "1.0"
+        },
+        "Title text content2": "Отель VIP-класса с собственными гольф полями. Высокий уровнь сервиса. Рекомендуем для респектабельного отдыха. Отель принимает гостей от 18 лет!",
+        "Frame 9 children": [
+          {
+            "type": "group",
+            "padding": {
+              "left": "10.0",
+              "top": "5.0",
+              "right": "10.0",
+              "bottom": "5.0"
+            },
+            "border-radius": 5.0,
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "arrangement": "row",
+            "main-axis-align": "start",
+            "children": [
+              {
+                "type": "text",
+                "font-weight": 500.0,
+                "color": {
+                  "alpha": "1.0",
+                  "hue": "224.99999999999997",
+                  "saturation": "0.13333333333333341",
+                  "value": "0.5882352941176471"
+                },
+                "text-content": "3-я линия",
+                "overflow": "visible",
+                "text-size": 16.0,
+                "line-height": 1.2000000762939453,
+                "typeface": "SF Pro Display"
+              }
+            ],
+            "item-spacing": 2.0,
+            "background-color": {
+              "alpha": "1.0",
+              "hue": "240.0",
+              "saturation": "0.003968253968254066",
+              "value": "0.9882352941176471"
+            },
+            "clip-content": false
+          },
+          {
+            "type": "group",
+            "padding": {
+              "left": "10.0",
+              "top": "5.0",
+              "right": "10.0",
+              "bottom": "5.0"
+            },
+            "border-radius": 5.0,
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "arrangement": "row",
+            "main-axis-align": "start",
+            "children": [
+              {
+                "type": "text",
+                "font-weight": 500.0,
+                "color": {
+                  "alpha": "1.0",
+                  "hue": "224.99999999999997",
+                  "saturation": "0.13333333333333341",
+                  "value": "0.5882352941176471"
+                },
+                "text-content": "Платный Wi-Fi в фойе",
+                "overflow": "visible",
+                "text-size": 16.0,
+                "line-height": 1.2000000762939453,
+                "typeface": "SF Pro Display"
+              }
+            ],
+            "item-spacing": 2.0,
+            "background-color": {
+              "alpha": "1.0",
+              "hue": "240.0",
+              "saturation": "0.003968253968254066",
+              "value": "0.9882352941176471"
+            },
+            "clip-content": false
+          },
+          {
+            "type": "group",
+            "padding": {
+              "left": "10.0",
+              "top": "5.0",
+              "right": "10.0",
+              "bottom": "5.0"
+            },
+            "border-radius": 5.0,
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "arrangement": "row",
+            "main-axis-align": "start",
+            "children": [
+              {
+                "type": "text",
+                "font-weight": 500.0,
+                "color": {
+                  "alpha": "1.0",
+                  "hue": "224.99999999999997",
+                  "saturation": "0.13333333333333341",
+                  "value": "0.5882352941176471"
+                },
+                "text-content": "30 км до аэропорта",
+                "overflow": "visible",
+                "text-size": 16.0,
+                "line-height": 1.2000000762939453,
+                "typeface": "SF Pro Display"
+              }
+            ],
+            "item-spacing": 2.0,
+            "background-color": {
+              "alpha": "1.0",
+              "hue": "240.0",
+              "saturation": "0.003968253968254066",
+              "value": "0.9882352941176471"
+            },
+            "clip-content": false
+          },
+          {
+            "type": "group",
+            "padding": {
+              "left": "10.0",
+              "top": "5.0",
+              "right": "10.0",
+              "bottom": "5.0"
+            },
+            "border-radius": 5.0,
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "arrangement": "row",
+            "main-axis-align": "start",
+            "children": [
+              {
+                "type": "text",
+                "font-weight": 500.0,
+                "color": {
+                  "alpha": "1.0",
+                  "hue": "224.99999999999997",
+                  "saturation": "0.13333333333333341",
+                  "value": "0.5882352941176471"
+                },
+                "text-content": "1 км до пляжа",
+                "overflow": "visible",
+                "text-size": 16.0,
+                "line-height": 1.2000000762939453,
+                "typeface": "SF Pro Display"
+              }
+            ],
+            "item-spacing": 2.0,
+            "background-color": {
+              "alpha": "1.0",
+              "hue": "240.0",
+              "saturation": "0.003968253968254066",
+              "value": "0.9882352941176471"
+            },
+            "clip-content": false
+          }
+        ],
+        "Frame 582 children": [
+          {
+            "type": "group",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 313.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 38.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              {
+                "type": "group",
+                "size-constraints": {
+                  "width-constraints": {
+                    "sizing-mode": "shrink"
+                  },
+                  "height-constraints": {
+                    "sizing-mode": "shrink"
+                  }
+                },
+                "arrangement": "row",
+                "main-axis-align": "start",
+                "children": [
+                  {
+                    "type": "group",
+                    "size-constraints": {
+                      "width-constraints": {
+                        "sizing-mode": "fixed",
+                        "value": 24.0
+                      },
+                      "height-constraints": {
+                        "sizing-mode": "fixed",
+                        "value": 24.0
+                      }
+                    },
+                    "is-structured": false,
+                    "children": [
+                      {
+                        "type": "group",
+                        "size-constraints": {
+                          "width-constraints": {
+                            "sizing-mode": "fixed",
+                            "value": 24.0
+                          },
+                          "height-constraints": {
+                            "sizing-mode": "fixed",
+                            "value": 24.0
+                          }
+                        },
+                        "is-structured": false,
+                        "children": [
+                          {
+                            "type": "group",
+                            "size-constraints": {
+                              "width-constraints": {
+                                "sizing-mode": "fixed",
+                                "value": 24.0
+                              },
+                              "height-constraints": {
+                                "sizing-mode": "fixed",
+                                "value": 24.0
+                              }
+                            },
+                            "is-structured": false,
+                            "children": [
+                              {
+                                "type": "vector",
+                                "margin": "2.0",
+                                "alignment": {
+                                  "horizontal": {
+                                    "attachment": "start",
+                                    "offset": -1.0
+                                  },
+                                  "vertical": {
+                                    "attachment": "start",
+                                    "offset": -1.0
+                                  }
+                                },
+                                "size-constraints": {
+                                  "width-constraints": {
+                                    "sizing-mode": "proportional",
+                                    "value": 1.0
+                                  },
+                                  "height-constraints": {
+                                    "sizing-mode": "proportional",
+                                    "value": 1.0
+                                  }
+                                },
+                                "vector-content": "vector.svg"
+                              },
+                              {
+                                "type": "vector",
+                                "margin": {
+                                  "left": "14.0",
+                                  "top": "6.75",
+                                  "right": "7.0",
+                                  "bottom": "14.25"
+                                },
+                                "alignment": {
+                                  "horizontal": {
+                                    "attachment": "start",
+                                    "offset": -1.0
+                                  },
+                                  "vertical": {
+                                    "attachment": "start",
+                                    "offset": -1.0
+                                  }
+                                },
+                                "size-constraints": {
+                                  "width-constraints": {
+                                    "sizing-mode": "proportional",
+                                    "value": 1.0
+                                  },
+                                  "height-constraints": {
+                                    "sizing-mode": "proportional",
+                                    "value": 1.0
+                                  }
+                                },
+                                "vector-content": "vector1.svg"
+                              },
+                              {
+                                "type": "vector",
+                                "margin": {
+                                  "left": "7.0",
+                                  "top": "6.75",
+                                  "right": "14.0",
+                                  "bottom": "14.25"
+                                },
+                                "alignment": {
+                                  "horizontal": {
+                                    "attachment": "start",
+                                    "offset": -1.0
+                                  },
+                                  "vertical": {
+                                    "attachment": "start",
+                                    "offset": -1.0
+                                  }
+                                },
+                                "size-constraints": {
+                                  "width-constraints": {
+                                    "sizing-mode": "proportional",
+                                    "value": 1.0
+                                  },
+                                  "height-constraints": {
+                                    "sizing-mode": "proportional",
+                                    "value": 1.0
+                                  }
+                                },
+                                "vector-content": "vector2.svg"
+                              },
+                              {
+                                "type": "vector",
+                                "margin": {
+                                  "left": "7.5",
+                                  "top": "13.300048828125",
+                                  "right": "7.5",
+                                  "bottom": "5.300048828125"
+                                },
+                                "alignment": {
+                                  "horizontal": {
+                                    "attachment": "start",
+                                    "offset": -1.0
+                                  },
+                                  "vertical": {
+                                    "attachment": "start",
+                                    "offset": -1.0
+                                  }
+                                },
+                                "size-constraints": {
+                                  "width-constraints": {
+                                    "sizing-mode": "proportional",
+                                    "value": 1.0
+                                  },
+                                  "height-constraints": {
+                                    "sizing-mode": "proportional",
+                                    "value": 1.0
+                                  }
+                                },
+                                "vector-content": "vector3.svg"
+                              },
+                              {
+                                "type": "vector",
+                                "size-constraints": {
+                                  "width-constraints": {
+                                    "sizing-mode": "proportional",
+                                    "value": 1.0
+                                  },
+                                  "height-constraints": {
+                                    "sizing-mode": "proportional",
+                                    "value": 1.0
+                                  }
+                                }
+                              }
+                            ],
+                            "clip-content": false
+                          }
+                        ],
+                        "clip-content": false
+                      }
+                    ],
+                    "clip-content": false
+                  },
+                  {
+                    "type": "group",
+                    "size-constraints": {
+                      "width-constraints": {
+                        "sizing-mode": "shrink"
+                      },
+                      "height-constraints": {
+                        "sizing-mode": "shrink"
+                      }
+                    },
+                    "main-axis-align": "start",
+                    "cross-axis-align": "start",
+                    "children": [
+                      {
+                        "type": "text",
+                        "font-weight": 500.0,
+                        "color": {
+                          "alpha": "1.0",
+                          "hue": "213.33333333333334",
+                          "saturation": "0.16981132075471703",
+                          "value": "0.20784313725490197"
+                        },
+                        "text-content": "Удобства",
+                        "overflow": "visible",
+                        "text-align": "left",
+                        "text-size": 16.0,
+                        "line-height": 1.2000000762939453,
+                        "typeface": "SF Pro Display"
+                      },
+                      {
+                        "type": "text",
+                        "font-weight": 500.0,
+                        "color": {
+                          "alpha": "1.0",
+                          "hue": "227.99999999999997",
+                          "saturation": "0.13333333333333341",
+                          "value": "0.5882352941176471"
+                        },
+                        "text-content": "Самое необходимое",
+                        "overflow": "visible",
+                        "text-align": "left",
+                        "line-height": 1.2000000762939453,
+                        "typeface": "SF Pro Display"
+                      }
+                    ],
+                    "item-spacing": 2.0,
+                    "clip-content": false
+                  }
+                ],
+                "item-spacing": 12.0,
+                "clip-content": false
+              },
+              {
+                "type": "group",
+                "padding": {
+                  "left": "10.0",
+                  "top": "6.0",
+                  "right": "8.0",
+                  "bottom": "6.0"
+                },
+                "alignment": {
+                  "horizontal": {
+                    "attachment": "start",
+                    "offset": 289.0
+                  },
+                  "vertical": {
+                    "attachment": "start",
+                    "offset": 7.0
+                  }
+                },
+                "size-constraints": {
+                  "width-constraints": {
+                    "sizing-mode": "shrink"
+                  },
+                  "height-constraints": {
+                    "sizing-mode": "shrink"
+                  }
+                },
+                "arrangement": "row",
+                "main-axis-align": "start",
+                "cross-axis-align": "start",
+                "children": [
+                  {
+                    "type": "vector",
+                    "alignment": {
+                      "horizontal": {
+                        "attachment": "start",
+                        "offset": -1.0
+                      },
+                      "vertical": {
+                        "attachment": "start",
+                        "offset": -1.0
+                      }
+                    },
+                    "size-constraints": {
+                      "width-constraints": {
+                        "sizing-mode": "fixed",
+                        "value": 6.0
+                      },
+                      "height-constraints": {
+                        "sizing-mode": "fixed",
+                        "value": 12.0
+                      }
+                    },
+                    "vector-content": "vector_55.svg"
+                  }
+                ],
+                "item-spacing": 10.0,
+                "clip-content": false
+              }
+            ],
+            "clip-content": false
+          },
+          {
+            "type": "vector",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 0.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": -0.5
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 275.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 0.0
+              }
+            },
+            "vector-content": "vector_56.svg"
+          },
+          {
+            "type": "group",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 313.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 38.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              {
+                "type": "group",
+                "size-constraints": {
+                  "width-constraints": {
+                    "sizing-mode": "shrink"
+                  },
+                  "height-constraints": {
+                    "sizing-mode": "shrink"
+                  }
+                },
+                "arrangement": "row",
+                "main-axis-align": "start",
+                "children": [
+                  {
+                    "type": "group",
+                    "size-constraints": {
+                      "width-constraints": {
+                        "sizing-mode": "fixed",
+                        "value": 24.0
+                      },
+                      "height-constraints": {
+                        "sizing-mode": "fixed",
+                        "value": 24.0
+                      }
+                    },
+                    "is-structured": false,
+                    "children": [
+                      {
+                        "type": "group",
+                        "size-constraints": {
+                          "width-constraints": {
+                            "sizing-mode": "fixed",
+                            "value": 24.0
+                          },
+                          "height-constraints": {
+                            "sizing-mode": "fixed",
+                            "value": 24.0
+                          }
+                        },
+                        "is-structured": false,
+                        "children": [
+                          {
+                            "type": "group",
+                            "size-constraints": {
+                              "width-constraints": {
+                                "sizing-mode": "fixed",
+                                "value": 24.0
+                              },
+                              "height-constraints": {
+                                "sizing-mode": "fixed",
+                                "value": 24.0
+                              }
+                            },
+                            "is-structured": false,
+                            "children": [
+                              {
+                                "type": "vector",
+                                "margin": "2.0",
+                                "alignment": {
+                                  "horizontal": {
+                                    "attachment": "start",
+                                    "offset": -1.0
+                                  },
+                                  "vertical": {
+                                    "attachment": "start",
+                                    "offset": -1.0
+                                  }
+                                },
+                                "size-constraints": {
+                                  "width-constraints": {
+                                    "sizing-mode": "proportional",
+                                    "value": 1.0
+                                  },
+                                  "height-constraints": {
+                                    "sizing-mode": "proportional",
+                                    "value": 1.0
+                                  }
+                                },
+                                "vector-content": "vector4.svg"
+                              },
+                              {
+                                "type": "vector",
+                                "margin": {
+                                  "left": "7.75",
+                                  "top": "9.169921875",
+                                  "right": "7.75",
+                                  "bottom": "9.170166015625"
+                                },
+                                "alignment": {
+                                  "horizontal": {
+                                    "attachment": "start",
+                                    "offset": -1.0
+                                  },
+                                  "vertical": {
+                                    "attachment": "start",
+                                    "offset": -1.0
+                                  }
+                                },
+                                "size-constraints": {
+                                  "width-constraints": {
+                                    "sizing-mode": "proportional",
+                                    "value": 1.0
+                                  },
+                                  "height-constraints": {
+                                    "sizing-mode": "proportional",
+                                    "value": 1.0
+                                  }
+                                },
+                                "vector-content": "vector5.svg"
+                              },
+                              {
+                                "type": "vector",
+                                "size-constraints": {
+                                  "width-constraints": {
+                                    "sizing-mode": "proportional",
+                                    "value": 1.0
+                                  },
+                                  "height-constraints": {
+                                    "sizing-mode": "proportional",
+                                    "value": 1.0
+                                  }
+                                }
+                              }
+                            ],
+                            "clip-content": false
+                          }
+                        ],
+                        "clip-content": false
+                      }
+                    ],
+                    "clip-content": false
+                  },
+                  {
+                    "type": "group",
+                    "size-constraints": {
+                      "width-constraints": {
+                        "sizing-mode": "shrink"
+                      },
+                      "height-constraints": {
+                        "sizing-mode": "shrink"
+                      }
+                    },
+                    "main-axis-align": "start",
+                    "cross-axis-align": "start",
+                    "children": [
+                      {
+                        "type": "text",
+                        "font-weight": 500.0,
+                        "color": {
+                          "alpha": "1.0",
+                          "hue": "213.33333333333334",
+                          "saturation": "0.16981132075471703",
+                          "value": "0.20784313725490197"
+                        },
+                        "text-content": "Что включено",
+                        "overflow": "visible",
+                        "text-align": "left",
+                        "text-size": 16.0,
+                        "line-height": 1.2000000762939453,
+                        "typeface": "SF Pro Display"
+                      },
+                      {
+                        "type": "text",
+                        "font-weight": 500.0,
+                        "color": {
+                          "alpha": "1.0",
+                          "hue": "227.99999999999997",
+                          "saturation": "0.13333333333333341",
+                          "value": "0.5882352941176471"
+                        },
+                        "text-content": "Самое необходимое",
+                        "overflow": "visible",
+                        "text-align": "left",
+                        "line-height": 1.2000000762939453,
+                        "typeface": "SF Pro Display"
+                      }
+                    ],
+                    "item-spacing": 2.0,
+                    "clip-content": false
+                  }
+                ],
+                "item-spacing": 12.0,
+                "clip-content": false
+              },
+              {
+                "type": "group",
+                "padding": {
+                  "left": "10.0",
+                  "top": "6.0",
+                  "right": "8.0",
+                  "bottom": "6.0"
+                },
+                "alignment": {
+                  "horizontal": {
+                    "attachment": "start",
+                    "offset": 289.0
+                  },
+                  "vertical": {
+                    "attachment": "start",
+                    "offset": 7.0
+                  }
+                },
+                "size-constraints": {
+                  "width-constraints": {
+                    "sizing-mode": "shrink"
+                  },
+                  "height-constraints": {
+                    "sizing-mode": "shrink"
+                  }
+                },
+                "arrangement": "row",
+                "main-axis-align": "start",
+                "cross-axis-align": "start",
+                "children": [
+                  {
+                    "type": "vector",
+                    "alignment": {
+                      "horizontal": {
+                        "attachment": "start",
+                        "offset": -1.0
+                      },
+                      "vertical": {
+                        "attachment": "start",
+                        "offset": -1.0
+                      }
+                    },
+                    "size-constraints": {
+                      "width-constraints": {
+                        "sizing-mode": "fixed",
+                        "value": 6.0
+                      },
+                      "height-constraints": {
+                        "sizing-mode": "fixed",
+                        "value": 12.0
+                      }
+                    },
+                    "vector-content": "vector_58.svg"
+                  }
+                ],
+                "item-spacing": 10.0,
+                "clip-content": false
+              }
+            ],
+            "clip-content": false
+          },
+          {
+            "type": "vector",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 0.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": -0.5
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 275.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 0.0
+              }
+            },
+            "vector-content": "vector_57.svg"
+          },
+          {
+            "type": "group",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 313.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 38.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              {
+                "type": "group",
+                "size-constraints": {
+                  "width-constraints": {
+                    "sizing-mode": "shrink"
+                  },
+                  "height-constraints": {
+                    "sizing-mode": "shrink"
+                  }
+                },
+                "arrangement": "row",
+                "main-axis-align": "start",
+                "children": [
+                  {
+                    "type": "group",
+                    "size-constraints": {
+                      "width-constraints": {
+                        "sizing-mode": "fixed",
+                        "value": 24.0
+                      },
+                      "height-constraints": {
+                        "sizing-mode": "fixed",
+                        "value": 24.0
+                      }
+                    },
+                    "is-structured": false,
+                    "children": [
+                      {
+                        "type": "group",
+                        "size-constraints": {
+                          "width-constraints": {
+                            "sizing-mode": "fixed",
+                            "value": 24.0
+                          },
+                          "height-constraints": {
+                            "sizing-mode": "fixed",
+                            "value": 24.0
+                          }
+                        },
+                        "is-structured": false,
+                        "children": [
+                          {
+                            "type": "group",
+                            "size-constraints": {
+                              "width-constraints": {
+                                "sizing-mode": "fixed",
+                                "value": 24.0
+                              },
+                              "height-constraints": {
+                                "sizing-mode": "fixed",
+                                "value": 24.0
+                              }
+                            },
+                            "is-structured": false,
+                            "children": [
+                              {
+                                "type": "vector",
+                                "margin": {
+                                  "left": "9.1700439453125",
+                                  "top": "9.1700439453125",
+                                  "right": "9.169921875",
+                                  "bottom": "9.169921875"
+                                },
+                                "alignment": {
+                                  "horizontal": {
+                                    "attachment": "start",
+                                    "offset": -1.0
+                                  },
+                                  "vertical": {
+                                    "attachment": "start",
+                                    "offset": -1.0
+                                  }
+                                },
+                                "size-constraints": {
+                                  "width-constraints": {
+                                    "sizing-mode": "proportional",
+                                    "value": 1.0
+                                  },
+                                  "height-constraints": {
+                                    "sizing-mode": "proportional",
+                                    "value": 1.0
+                                  }
+                                },
+                                "vector-content": "vector6.svg"
+                              },
+                              {
+                                "type": "vector",
+                                "margin": {
+                                  "left": "9.1700439453125",
+                                  "top": "9.1700439453125",
+                                  "right": "9.169921875",
+                                  "bottom": "9.169921875"
+                                },
+                                "alignment": {
+                                  "horizontal": {
+                                    "attachment": "start",
+                                    "offset": -1.0
+                                  },
+                                  "vertical": {
+                                    "attachment": "start",
+                                    "offset": -1.0
+                                  }
+                                },
+                                "size-constraints": {
+                                  "width-constraints": {
+                                    "sizing-mode": "proportional",
+                                    "value": 1.0
+                                  },
+                                  "height-constraints": {
+                                    "sizing-mode": "proportional",
+                                    "value": 1.0
+                                  }
+                                },
+                                "vector-content": "vector7.svg"
+                              },
+                              {
+                                "type": "vector",
+                                "margin": "2.0",
+                                "alignment": {
+                                  "horizontal": {
+                                    "attachment": "start",
+                                    "offset": -1.0
+                                  },
+                                  "vertical": {
+                                    "attachment": "start",
+                                    "offset": -1.0
+                                  }
+                                },
+                                "size-constraints": {
+                                  "width-constraints": {
+                                    "sizing-mode": "proportional",
+                                    "value": 1.0
+                                  },
+                                  "height-constraints": {
+                                    "sizing-mode": "proportional",
+                                    "value": 1.0
+                                  }
+                                },
+                                "vector-content": "vector8.svg"
+                              },
+                              {
+                                "type": "vector",
+                                "size-constraints": {
+                                  "width-constraints": {
+                                    "sizing-mode": "proportional",
+                                    "value": 1.0
+                                  },
+                                  "height-constraints": {
+                                    "sizing-mode": "proportional",
+                                    "value": 1.0
+                                  }
+                                }
+                              }
+                            ],
+                            "clip-content": false
+                          }
+                        ],
+                        "clip-content": false
+                      }
+                    ],
+                    "clip-content": false
+                  },
+                  {
+                    "type": "group",
+                    "size-constraints": {
+                      "width-constraints": {
+                        "sizing-mode": "shrink"
+                      },
+                      "height-constraints": {
+                        "sizing-mode": "shrink"
+                      }
+                    },
+                    "main-axis-align": "start",
+                    "cross-axis-align": "start",
+                    "children": [
+                      {
+                        "type": "text",
+                        "font-weight": 500.0,
+                        "color": {
+                          "alpha": "1.0",
+                          "hue": "213.33333333333334",
+                          "saturation": "0.16981132075471703",
+                          "value": "0.20784313725490197"
+                        },
+                        "text-content": "Что не включено",
+                        "overflow": "visible",
+                        "text-align": "left",
+                        "text-size": 16.0,
+                        "line-height": 1.2000000762939453,
+                        "typeface": "SF Pro Display"
+                      },
+                      {
+                        "type": "text",
+                        "font-weight": 500.0,
+                        "color": {
+                          "alpha": "1.0",
+                          "hue": "227.99999999999997",
+                          "saturation": "0.13333333333333341",
+                          "value": "0.5882352941176471"
+                        },
+                        "text-content": "Самое необходимое",
+                        "overflow": "visible",
+                        "text-align": "left",
+                        "line-height": 1.2000000762939453,
+                        "typeface": "SF Pro Display"
+                      }
+                    ],
+                    "item-spacing": 2.0,
+                    "clip-content": false
+                  }
+                ],
+                "item-spacing": 12.0,
+                "clip-content": false
+              },
+              {
+                "type": "group",
+                "padding": {
+                  "left": "10.0",
+                  "top": "6.0",
+                  "right": "8.0",
+                  "bottom": "6.0"
+                },
+                "alignment": {
+                  "horizontal": {
+                    "attachment": "start",
+                    "offset": 289.0
+                  },
+                  "vertical": {
+                    "attachment": "start",
+                    "offset": 7.0
+                  }
+                },
+                "size-constraints": {
+                  "width-constraints": {
+                    "sizing-mode": "shrink"
+                  },
+                  "height-constraints": {
+                    "sizing-mode": "shrink"
+                  }
+                },
+                "arrangement": "row",
+                "main-axis-align": "start",
+                "cross-axis-align": "start",
+                "children": [
+                  {
+                    "type": "vector",
+                    "alignment": {
+                      "horizontal": {
+                        "attachment": "start",
+                        "offset": -1.0
+                      },
+                      "vertical": {
+                        "attachment": "start",
+                        "offset": -1.0
+                      }
+                    },
+                    "size-constraints": {
+                      "width-constraints": {
+                        "sizing-mode": "fixed",
+                        "value": 6.0
+                      },
+                      "height-constraints": {
+                        "sizing-mode": "fixed",
+                        "value": 12.0
+                      }
+                    },
+                    "vector-content": "vector_59.svg"
+                  }
+                ],
+                "item-spacing": 10.0,
+                "clip-content": false
+              }
+            ],
+            "clip-content": false
+          }
+        ],
+        "Frame 582 padding": "15.0",
+        "Title text content": "Об отеле"
+      }
+    }
+  ],
+  "adin-component-search-paths": [],
+  "image-search-paths": [],
+  "vector-search-paths": []
+}

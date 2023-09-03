@@ -1,0 +1,142 @@
+{
+  "name": "buttons_primary_buttons",
+  "version": 32,
+  "source-key": {
+    "type": "figma",
+    "file": "UuuJog8nLviITB3ddlbVLN",
+    "node": "8:226",
+    "version": "4096621785",
+    "component-id": "48819c4d08c18d46810fe2fc4b4e480a8e40052b"
+  },
+  "default": "Buttons/Primary Buttons",
+  "design": {
+    "atoms": [
+      {
+        "type": "group",
+        "id": "top_level",
+        "root": "true"
+      },
+      {
+        "type": "group",
+        "id": "Labels"
+      }
+    ],
+    "modes": {
+      "Buttons/Primary Buttons": {
+        "rules": [
+          {
+            "id": "top_level",
+            "border-radius": "15.0",
+            "is-structured": "false",
+            "children": [
+              "Labels"
+            ],
+            "background-color": {
+              "alpha": "1.0",
+              "hue": "214.95867768595042",
+              "saturation": "0.9490196078431372",
+              "value": "1.0"
+            },
+            "clip-content": "false"
+          },
+          {
+            "id": "Labels",
+            "margin": {
+              "top": "0.0001220703125"
+            },
+            "is-structured": "false",
+            "children": "$Labels children",
+            "background-color": "$Labels background color",
+            "clip-content": "false"
+          }
+        ]
+      }
+    }
+  },
+  "parameters": {
+    "Labels background color": {
+      "data-type": "color",
+      "required": false,
+      "description": ""
+    },
+    "Labels children": {
+      "data-type": "list-item",
+      "required": false,
+      "description": ""
+    }
+  },
+  "previews": [
+    {
+      "design": "Buttons/Primary Buttons",
+      "size": {
+        "width": 343.0,
+        "height": 48.0
+      },
+      "parameters": {
+        "Labels children": [
+          {
+            "type": "group",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": 0.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": 0.5
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 343.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 19.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              {
+                "type": "text",
+                "margin": {
+                  "bottom": "1.0"
+                },
+                "size-constraints": {
+                  "width-constraints": {
+                    "sizing-mode": "proportional",
+                    "value": 1.0
+                  },
+                  "height-constraints": {
+                    "sizing-mode": "proportional",
+                    "value": 1.0
+                  }
+                },
+                "font-weight": 500.0,
+                "color": {
+                  "alpha": "1.0",
+                  "hue": "0.0",
+                  "saturation": "0.0",
+                  "value": "1.0"
+                },
+                "text-content": "К выбору номера",
+                "overflow": "visible",
+                "max-lines": -1,
+                "text-align-vertical": "center",
+                "text-size": 16.0,
+                "letter-spacing": 0.10000000149011612,
+                "line-height": 1.1,
+                "typeface": "SF Pro Display"
+              }
+            ],
+            "clip-content": false
+          }
+        ]
+      }
+    }
+  ],
+  "adin-component-search-paths": [],
+  "image-search-paths": [],
+  "vector-search-paths": []
+}

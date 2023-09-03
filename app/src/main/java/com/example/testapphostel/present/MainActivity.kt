@@ -28,7 +28,7 @@ class MainActivity : ComponentActivity() {
                 }
 
                 composable("Hotel"){
-                    ItemHotel(viewModel = viewModel)
+                    ItemHotel( viewModel,navController)
 
                 }
                 composable("Room"){

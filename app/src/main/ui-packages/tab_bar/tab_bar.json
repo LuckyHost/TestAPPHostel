@@ -1,0 +1,321 @@
+{
+  "name": "tab_bar",
+  "version": 32,
+  "source-key": {
+    "type": "figma",
+    "file": "P72dG6udmwz3ggWSKBvqim",
+    "node": "631:3",
+    "version": "4096582728",
+    "component-id": "d51f1a7818443ee4d7d40d047d5a03d860e0fe28"
+  },
+  "default": "Tab Bar",
+  "design": {
+    "atoms": [
+      {
+        "type": "group",
+        "id": "top_level",
+        "root": "true"
+      },
+      {
+        "type": "group",
+        "id": "Background"
+      },
+      {
+        "type": "vector",
+        "id": "Shape"
+      },
+      {
+        "type": "vector",
+        "id": "Background1"
+      },
+      {
+        "type": "group",
+        "id": "Home"
+      },
+      {
+        "type": "group",
+        "id": "Search"
+      },
+      {
+        "type": "group",
+        "id": "Upload"
+      },
+      {
+        "type": "group",
+        "id": "Chat"
+      },
+      {
+        "type": "group",
+        "id": "Profile"
+      },
+      {
+        "type": "vector",
+        "id": "Rectangle"
+      },
+      {
+        "type": "group",
+        "id": "person"
+      },
+      {
+        "type": "vector",
+        "id": "Ellipse"
+      },
+      {
+        "type": "vector",
+        "id": "Ellipse1"
+      }
+    ],
+    "modes": {
+      "Tab Bar": {
+        "rules": [
+          {
+            "id": "top_level",
+            "padding": "$Tab Bar padding",
+            "tap-handler": "$on Tab Bar tapped",
+            "is-structured": "false",
+            "children": [
+              "Background",
+              "Shape"
+            ],
+            "clip-content": "false"
+          },
+          {
+            "id": "Background",
+            "is-structured": "false",
+            "children": [
+              "Background1",
+              "Home",
+              "Search",
+              "Upload",
+              "Chat",
+              "Profile"
+            ],
+            "clip-content": "false"
+          },
+          {
+            "id": "Shape",
+            "margin": {
+              "left": "120.0",
+              "top": "70.0",
+              "right": "120.0",
+              "bottom": "8.0"
+            },
+            "border-radius": "10.0",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              }
+            },
+            "vector-content": "shape.svg"
+          },
+          {
+            "id": "Background1",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": "0.0"
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": "-0.5"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              }
+            },
+            "vector-content": "background.svg"
+          },
+          {
+            "id": "Home",
+            "margin": {
+              "left": "11.0",
+              "top": "9.0",
+              "right": "324.0",
+              "bottom": "34.0"
+            },
+            "is-structured": "false"
+          },
+          {
+            "id": "Search",
+            "margin": {
+              "left": "82.0",
+              "top": "9.0",
+              "right": "253.0",
+              "bottom": "34.0"
+            },
+            "is-structured": "false"
+          },
+          {
+            "id": "Upload",
+            "margin": {
+              "left": "153.0",
+              "top": "9.0",
+              "right": "152.0",
+              "bottom": "34.0"
+            },
+            "is-structured": "false",
+            "children": [
+              "Rectangle"
+            ]
+          },
+          {
+            "id": "Chat",
+            "margin": {
+              "left": "254.0",
+              "top": "9.0",
+              "right": "81.0",
+              "bottom": "34.0"
+            },
+            "is-structured": "false"
+          },
+          {
+            "id": "Profile",
+            "margin": {
+              "left": "324.0",
+              "top": "9.0",
+              "right": "11.0",
+              "bottom": "34.0"
+            },
+            "is-structured": "false",
+            "children": [
+              "person"
+            ]
+          },
+          {
+            "id": "Rectangle",
+            "border-radius": "20.0",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              }
+            },
+            "vector-content": "rectangle.svg"
+          },
+          {
+            "id": "person",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": "15.0"
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": "12.0"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "10.4345703125"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "15.0"
+              }
+            },
+            "is-structured": "false",
+            "children": [
+              "Ellipse",
+              "Ellipse1"
+            ],
+            "clip-content": "false"
+          },
+          {
+            "id": "Ellipse",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": "-0.5"
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": "7.978271484375"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "10.4345703125"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "6.521728515625"
+              }
+            },
+            "vector-content": "ellipse.svg"
+          },
+          {
+            "id": "Ellipse1",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": "0.8046875"
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": "-0.5"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "7.826171875"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "7.8260498046875"
+              }
+            },
+            "vector-content": "ellipse1.svg"
+          }
+        ]
+      }
+    }
+  },
+  "parameters": {
+    "Tab Bar padding": {
+      "data-type": "edge-data",
+      "required": false,
+      "description": ""
+    },
+    "on Tab Bar tapped": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    },
+    "Custom parameter": {
+      "data-type": "text",
+      "required": false,
+      "description": ""
+    }
+  },
+  "previews": [
+    {
+      "design": "Tab Bar",
+      "size": {
+        "width": 375.0,
+        "height": 83.0
+      }
+    }
+  ],
+  "adin-component-search-paths": [],
+  "image-search-paths": [],
+  "vector-search-paths": []
+}
