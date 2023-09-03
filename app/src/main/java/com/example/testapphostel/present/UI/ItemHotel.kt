@@ -3,8 +3,11 @@ package com.example.testapphostel.present.UI
 import android.icu.text.*
 import android.icu.util.*
 import android.util.*
+import android.widget.*
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.*
+import androidx.compose.foundation.lazy.grid.*
 import androidx.compose.foundation.pager.*
 import androidx.compose.foundation.shape.*
 import androidx.compose.material3.*
@@ -32,28 +35,36 @@ fun ItemHotel(
     viewModel: ViewModel,
 ) {
 
-    val listImages = viewModel.listImages.collectAsState(initial = emptyList())
+    val listImages = viewModel.listImages.collectAsState()
+    val item = viewModel.hostel.collectAsState()
     val pagerState = rememberPagerState()
-    val item = viewModel.hostel.collectAsState(null)
-    val price = remember { mutableStateOf("")    }
+    val price = remember { mutableStateOf("") }
+    val scrollState = rememberScrollState()
 
 
 
 
-    Box(modifier = Modifier.fillMaxSize()) {
+    Column(
+        modifier = Modifier.verticalScroll(rememberScrollState())
+    )
+    {
         Column {
 
 
             Card(
                 modifier = Modifier
                     .fillMaxWidth(1f)
-                    .padding(top = 5.dp, bottom = 5.dp)
-                    ,elevation= CardDefaults.cardElevation(5.dp)
-            ) {
+                    .padding(top = 5.dp, bottom = 5.dp),
+                shape = RoundedCornerShape(topStart = 50.dp, topEnd = 50.dp),
+                elevation = CardDefaults.cardElevation(5.dp)
+            )
+            {
                 Column {
-                    Box(modifier = Modifier
-                        .padding(bottom = 15.dp)
-                        .fillMaxHeight(0.28f))
+                    Box(
+                        modifier = Modifier
+                            .padding(bottom = 15.dp)
+                            .fillMaxHeight(0.28f)
+                    )
                     {
 
                         HorizontalPager(
@@ -69,10 +80,11 @@ fun ItemHotel(
                                 contentDescription = null,
                                 modifier = Modifier
                                     .padding(start = 10.dp, end = 10.dp, top = 10.dp)
-                                    .clip(RoundedCornerShape(8))
-                                    ,
+                                    .clip(RoundedCornerShape(8)),
                                 placeholder = painterResource(androidx.core.R.drawable.ic_call_answer_video_low)
                             )
+
+
                             Log.d("MyLog", "ItemHotel.kt. ItemHotel: ${listImages.value}")
                         }
 
@@ -118,22 +130,23 @@ fun ItemHotel(
                             .padding(20.dp, end = 20.dp)
                             .clip(RoundedCornerShape(25))
                             .height(30.dp)
-                            .background(Yealo), contentAlignment = Alignment.Center
+                            .background(Rating), contentAlignment = Alignment.Center
                     ) {
                         Row {
                             Icon(
-                                painter = painterResource(R.drawable.baseline_star_rate_24),
+                                painter = painterResource(R.drawable.star),
                                 contentDescription = null,
                                 modifier = Modifier
                                     .size(25.dp)
                                     .padding(start = 5.dp),
-                                tint = Or
+                                tint = RatingText
                             )
 
                             Text(
                                 text = item.value?.rating?.toString() ?: "5",
                                 fontSize = 16.sp,
                                 fontWeight = FontWeight.ExtraLight,
+                                color = RatingText,
                                 modifier = Modifier
                                     .padding(start = 2.dp)
                             )
@@ -141,6 +154,7 @@ fun ItemHotel(
                                 text = item.value?.rating_name ?: "Превосходно",
                                 fontSize = 16.sp,
                                 fontWeight = FontWeight.ExtraLight,
+                                color = RatingText,
                                 modifier = Modifier
                                     .padding(start = 5.dp, end = 5.dp)
                             )
@@ -158,7 +172,7 @@ fun ItemHotel(
                         text = item.value?.adress
                             ?: "Madinat Makadi, Safaga Road, Makadi Bay, Египет",
                         fontSize = 15.sp,
-                        color = Addres,
+                        color = Blue,
                         fontWeight = FontWeight.ExtraLight,
                         modifier = Modifier
                             .padding(start = 16.dp, top = 5.dp)
@@ -194,25 +208,103 @@ fun ItemHotel(
                 modifier = Modifier
                     .fillMaxWidth(1f)
 //                    .fillMaxHeight(0.5f)
-                    .padding(top = 5.dp, bottom = 5.dp)
-                ,elevation= CardDefaults.cardElevation(5.dp)
-            ) {
+                    .padding(top = 5.dp, bottom = 5.dp),
+                elevation = CardDefaults.cardElevation(5.dp)
+            )
+            {
                 Column {
                     Text(
                         modifier = Modifier
-                            .padding(start = 14.dp),
-                        text = "Об отеле:",
+                            .padding(start = 14.dp,top=15.dp),
+                        text = "Об отеле",
                         fontSize = 25.sp, fontWeight = FontWeight.Medium
                     )
+                    Box(
+                        Modifier
+                            .fillMaxHeight(0.01f)
+                            .padding(start = 15.dp, end = 15.dp)
+                    )
+                    {
+                        LazyRow() {
+                                val list= item.value?.about_the_hotel?.peculiarities ?: listOf("Бесплатный Wifi на всей территории отеля", "1 км до пляжа","Бесплатный фитнес-клуб","20 км до аэропорта")
 
+                            items(list){
 
+                                    Card(
+                                        modifier = Modifier
+                                            .padding(5.dp),
+                                        elevation = CardDefaults.cardElevation(5.dp)
+                                    )
+                                    {
+                                        Text(modifier = Modifier
+                                            .padding(5.dp)
+                                            .wrapContentWidth(align = Alignment.Start)
+                                            , text = it)
+
+                                    }
+                            }
+                        }
+                    }
                 }
+
+                Text(
+                    modifier = Modifier
+                        .padding(start = 15.dp, bottom = 15.dp),
+                    text = item.value?.about_the_hotel?.description
+                        ?: "Отель VIP-класса с собственными гольф полями. Высокий уровнь сервиса. Рекомендуем для респектабельного отдыха. Отель принимает гостей от 18 лет!",
+                    fontSize = 18.sp, fontWeight = FontWeight.W200
+                )
+
 
             }
 
         }
+
+        Card(
+            modifier = Modifier
+                .fillMaxWidth(1f)
+//                    .fillMaxHeight(0.5f)
+                .padding(top = 5.dp, bottom = 5.dp),
+            shape = RoundedCornerShape(bottomStart = 50.dp, bottomEnd = 50.dp),
+            elevation = CardDefaults.cardElevation(5.dp)
+        ) {
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .fillMaxHeight(0.25f)
+                    .padding(start = 20.dp, end = 20.dp, top = 15.dp, bottom = 15.dp),
+                contentAlignment = Alignment.Center
+            )
+            {
+                val customShape = RoundedCornerShape(
+                    topStart = 16.dp,
+                    topEnd = 16.dp,
+                    bottomStart = 16.dp,
+                    bottomEnd = 16.dp
+                )
+
+                val customColors = ButtonDefaults.buttonColors(
+                    containerColor = Blue,
+                    contentColor = Color.White
+                )
+
+                Button(modifier = Modifier
+                    .fillMaxWidth()
+                    .fillMaxHeight(),
+                    shape = customShape,
+                    colors = customColors,
+                    onClick = { /*TODO*/ })
+                {
+                    Text(text = "К выбору отеля")
+
+                }
+            }
+
+        }
+
     }
-}
+    }
+
 
 @Preview(showBackground = true)
 @Composable
