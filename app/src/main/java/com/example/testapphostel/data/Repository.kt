@@ -17,7 +17,16 @@ open class Repository @Inject constructor(
             .suspendOnException {
                 Log.d("MyLog", "Repository.kt. getDataHostel: $message")
             }
+        return result
+    }
 
+    suspend fun getDataRoom(): InfoRoom? {
+        var result: InfoRoom? =null
+        apiService.getDataRoom()
+            .suspendOnSuccess { result = data}
+            .suspendOnException {
+                Log.d("MyLog", "Repository.kt. getDataHostel: $message")
+            }
         return result
     }
 }

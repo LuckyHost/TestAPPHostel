@@ -23,7 +23,10 @@ open class ViewModel @Inject constructor(
     private val _hostel: MutableStateFlow<Hostels?> = MutableStateFlow(null)
     val hostel = _hostel.asStateFlow()
 
-    fun getData() {
+    private val _listRoom: MutableStateFlow<List<Room>?> = MutableStateFlow(emptyList())
+    val listRoom = _listRoom.asStateFlow()
+
+    fun getDataHostel() {
         viewModelScope.launch {
             var response = repository.getDataHostel()
             if (response?.id !=null){
@@ -36,5 +39,11 @@ open class ViewModel @Inject constructor(
         }
 
 
+    }
+
+    fun getDataRoom(){
+        viewModelScope.launch {
+            _listRoom.value=repository.getDataRoom()?.rooms
+        }
     }
 }

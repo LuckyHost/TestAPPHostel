@@ -3,10 +3,12 @@ package com.example.testapphostel.present
 import android.os.Bundle
 import androidx.activity.*
 import androidx.activity.compose.setContent
+import androidx.navigation.*
 import androidx.navigation.compose.*
 import com.example.testapphostel.present.UI.*
+import com.example.testapphostel.present.UI.Hostel.*
+import com.example.testapphostel.present.UI.Room.*
 import dagger.hilt.android.*
-import kotlinx.coroutines.*
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
@@ -14,7 +16,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
         val viewModel:ViewModel by viewModels()
-        viewModel.getData()
+        viewModel.getDataHostel()
         setContent {
 
             val navController = rememberNavController()
@@ -31,10 +33,16 @@ class MainActivity : ComponentActivity() {
                     ItemHotel( viewModel,navController)
 
                 }
-                composable("Room"){
-
+                composable("Room/{nameHostel}"
+                    ,arguments = listOf(navArgument("nameHostel") { type = NavType.StringType })
+                ) { entry ->
+                    // Используйте значение аргумента для отображения данных
+                    val nameHostel = entry.arguments?.getString("nameHostel")
+                    Rooms(viewModel = viewModel, navController = navController,nameHostel ?: "Hostel")
                 }
-                composable("Rezerv"){
+
+
+                composable("Reserve"){
 
                 }
 

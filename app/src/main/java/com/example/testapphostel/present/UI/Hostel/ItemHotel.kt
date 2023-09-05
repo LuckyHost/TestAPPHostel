@@ -1,4 +1,4 @@
-package com.example.testapphostel.present.UI
+package com.example.testapphostel.present.UI.Hostel
 
 import android.icu.text.*
 import android.icu.util.*
@@ -36,7 +36,7 @@ import com.example.testapphostel.present.UI.theme.*
 import com.skydoves.sandwich.*
 import kotlinx.coroutines.*
 
-@OptIn(ExperimentalFoundationApi::class)
+@OptIn(ExperimentalFoundationApi::class, ExperimentalMaterial3Api::class)
 @Composable
 fun ItemHotel(
     viewModel: ViewModel,navController: NavController
@@ -49,11 +49,26 @@ fun ItemHotel(
     val scrollState = rememberScrollState()
     val context = LocalContext.current
 
-
-
+    Scaffold(
+        topBar = {
+            TopAppBar(
+                title = {
+                    Row(
+                            modifier = Modifier.fillMaxWidth()
+                                .padding(15.dp)
+                            ,horizontalArrangement = Arrangement.Center,
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Text("Отель")
+                    }
+                }
+            )
+        }
+    ){ it
 
     Column(
         modifier = Modifier.verticalScroll(rememberScrollState())
+            .padding(it)
     )
     {
         Column {
@@ -80,6 +95,7 @@ fun ItemHotel(
                             state = pagerState,
                             modifier = Modifier
                                 .zIndex(0f)
+                                .height(220.dp)
 
                         )
                         {
@@ -139,7 +155,8 @@ fun ItemHotel(
                             .clip(RoundedCornerShape(25))
                             .height(30.dp)
                             .background(Rating), contentAlignment = Alignment.Center
-                    ) {
+                    )
+                    {
                         Row {
                             Icon(
                                 painter = painterResource(R.drawable.star),
@@ -441,7 +458,8 @@ fun ItemHotel(
                     .fillMaxHeight(),
                     shape = customShape,
                     colors = customColors,
-                    onClick = { navController.navigate("Room")})
+                    onClick = { android.util.Log.d("MyLog","ItemHotel.kt. ItemHotel: ${item.value?.name}")
+                        viewModel.getDataRoom();navController.navigate("Room/${item.value?.name}") })
                 {
                     Text(
                         text = "К выбору номера"
@@ -455,6 +473,7 @@ fun ItemHotel(
 
     }
     }
+}
 
 
 @Preview(showBackground = true)
@@ -475,6 +494,10 @@ class MockRepository(apiService: APIService) : Repository(apiService) {
 class MockApi : APIService {
     // ...
     override suspend fun getDataHostel(): ApiResponse<Hostels> {
+        TODO("Not yet implemented")
+    }
+
+    override suspend fun getDataRoom(): ApiResponse<InfoRoom> {
         TODO("Not yet implemented")
     }
 }
