@@ -27,6 +27,7 @@ import com.example.testapphostel.present.UI.theme.*
 fun ItemRoom(viewModel: ViewModel, room: Room, navController: NavController) {
 
     val pagerState = rememberPagerState()
+    val trig = remember { mutableStateOf(false)    }
 
 
 
@@ -220,7 +221,7 @@ fun ItemRoom(viewModel: ViewModel, room: Room, navController: NavController) {
                 .padding(20.dp),
                 shape = customShape,
                 colors = customColors,
-                onClick = { viewModel.getDataRoom();navController.navigate("Room") })
+                onClick = {  trig.value=!trig.value;navController.navigate("Reserve") })
             {
                 Text(
                     text = "Выбрать номер", fontSize = 16.sp
@@ -228,6 +229,11 @@ fun ItemRoom(viewModel: ViewModel, room: Room, navController: NavController) {
 
             }
         }
+    LaunchedEffect(trig.value)
+    {
+        viewModel.getDataRezerv()
+
+    }
     }
 
 

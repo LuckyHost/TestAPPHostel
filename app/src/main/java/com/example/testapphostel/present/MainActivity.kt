@@ -7,6 +7,7 @@ import androidx.navigation.*
 import androidx.navigation.compose.*
 import com.example.testapphostel.present.UI.*
 import com.example.testapphostel.present.UI.Hostel.*
+import com.example.testapphostel.present.UI.Reserve.*
 import com.example.testapphostel.present.UI.Room.*
 import dagger.hilt.android.*
 
@@ -43,6 +44,7 @@ class MainActivity : ComponentActivity() {
 
 
                 composable("Reserve"){
+                    ItemReserve(viewModel,navController)
 
                 }
 

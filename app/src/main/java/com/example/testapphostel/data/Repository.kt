@@ -29,4 +29,14 @@ open class Repository @Inject constructor(
             }
         return result
     }
+
+    suspend fun getDataRezerv(): Rezerv? {
+        var result: Rezerv? =null
+        apiService.getDataRezerv()
+            .suspendOnSuccess { result = data}
+            .suspendOnException {
+                Log.d("MyLog", "Repository.kt. getDataHostel: $message")
+            }
+        return result
+    }
 }

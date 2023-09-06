@@ -1,13 +1,10 @@
 package com.example.testapphostel.present.UI.Hostel
 
-import android.icu.text.*
-import android.icu.util.*
 import android.util.*
 import android.widget.*
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.*
-import androidx.compose.foundation.lazy.grid.*
 import androidx.compose.foundation.pager.*
 import androidx.compose.foundation.shape.*
 import androidx.compose.material3.*
@@ -15,8 +12,6 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.*
 import androidx.compose.ui.draw.*
 import androidx.compose.ui.graphics.*
-import androidx.compose.ui.graphics.painter.*
-import androidx.compose.ui.graphics.vector.*
 import androidx.compose.ui.platform.*
 import androidx.compose.ui.res.*
 import androidx.compose.ui.text.font.*
@@ -24,9 +19,7 @@ import androidx.compose.ui.tooling.preview.*
 import androidx.compose.ui.unit.*
 import androidx.navigation.*
 import androidx.navigation.compose.*
-import coil.*
 import coil.compose.*
-import coil.decode.*
 import com.example.testapphostel.R
 import com.example.testapphostel.data.*
 import com.example.testapphostel.data.NET.*
@@ -34,7 +27,6 @@ import com.example.testapphostel.domian.DataClass.*
 import com.example.testapphostel.present.*
 import com.example.testapphostel.present.UI.theme.*
 import com.skydoves.sandwich.*
-import kotlinx.coroutines.*
 
 @OptIn(ExperimentalFoundationApi::class, ExperimentalMaterial3Api::class)
 @Composable
@@ -43,18 +35,20 @@ fun ItemHotel(
 ) {
 
     val listImages = viewModel.listImages.collectAsState()
-    val item = viewModel.hostel.collectAsState()
+    val itemHostel = viewModel.hostel.collectAsState()
     val pagerState = rememberPagerState()
     val price = remember { mutableStateOf("") }
     val scrollState = rememberScrollState()
     val context = LocalContext.current
+    val trig = remember { mutableStateOf(false)    }
 
     Scaffold(
         topBar = {
             TopAppBar(
                 title = {
                     Row(
-                            modifier = Modifier.fillMaxWidth()
+                            modifier = Modifier
+                                .fillMaxWidth()
                                 .padding(15.dp)
                             ,horizontalArrangement = Arrangement.Center,
                         verticalAlignment = Alignment.CenterVertically
@@ -67,7 +61,8 @@ fun ItemHotel(
     ){ it
 
     Column(
-        modifier = Modifier.verticalScroll(rememberScrollState())
+        modifier = Modifier
+            .verticalScroll(rememberScrollState())
             .padding(it)
     )
     {
@@ -168,7 +163,7 @@ fun ItemHotel(
                             )
 
                             Text(
-                                text = item.value?.rating?.toString() ?: "5",
+                                text = itemHostel.value?.rating?.toString() ?: "5",
                                 fontSize = 16.sp,
                                 fontWeight = FontWeight.ExtraLight,
                                 color = RatingText,
@@ -176,7 +171,7 @@ fun ItemHotel(
                                     .padding(start = 2.dp)
                             )
                             Text(
-                                text = item.value?.rating_name ?: "Превосходно",
+                                text = itemHostel.value?.rating_name ?: "Превосходно",
                                 fontSize = 16.sp,
                                 fontWeight = FontWeight.ExtraLight,
                                 color = RatingText,
@@ -186,7 +181,7 @@ fun ItemHotel(
                         }
                     }
                     Text(
-                        text = item.value?.name ?: "Лучший пятизвездочный отель в Хургаде, Египет",
+                        text = itemHostel.value?.name ?: "Лучший пятизвездочный отель в Хургаде, Египет",
                         fontSize = 25.sp,
                         fontWeight = FontWeight.SemiBold,
                         modifier = Modifier
@@ -194,7 +189,7 @@ fun ItemHotel(
                     )
 
                     Text(
-                        text = item.value?.adress
+                        text = itemHostel.value?.adress
                             ?: "Madinat Makadi, Safaga Road, Makadi Bay, Египет",
                         fontSize = 15.sp,
                         color = Blue,
@@ -212,7 +207,7 @@ fun ItemHotel(
                         modifier = Modifier.padding(top = 15.dp, bottom = 15.dp)
                     )
                     {
-                         price.value = ((item.value?.minimal_price?.toString()) ?: "134268").chunked(3).joinToString(" ") { it }
+                         price.value = ((itemHostel.value?.minimal_price?.toString()) ?: "134268").chunked(3).joinToString(" ") { it }
 
                        Text(
                             text = ("от ${price.value} ₽"),
@@ -222,7 +217,7 @@ fun ItemHotel(
                                 .padding(start = 10.dp)
                         )
                         Text(
-                            text = item.value?.price_for_it ?: "За тур с перелётом",
+                            text = itemHostel.value?.price_for_it ?: "За тур с перелётом",
                             fontSize = 16.sp,
                             fontWeight = FontWeight.ExtraLight,
                             modifier = Modifier
@@ -256,7 +251,7 @@ fun ItemHotel(
                     )
                     {
                         LazyRow() {
-                            val list = item.value?.about_the_hotel?.peculiarities ?: listOf(
+                            val list = itemHostel.value?.about_the_hotel?.peculiarities ?: listOf(
                                 "Бесплатный Wifi на всей территории отеля",
                                 "1 км до пляжа",
                                 "Бесплатный фитнес-клуб",
@@ -286,7 +281,7 @@ fun ItemHotel(
                 Text(
                     modifier = Modifier
                         .padding(start = 15.dp, bottom = 15.dp),
-                    text = item.value?.about_the_hotel?.description
+                    text = itemHostel.value?.about_the_hotel?.description
                         ?: "Отель VIP-класса с собственными гольф полями. Высокий уровнь сервиса. Рекомендуем для респектабельного отдыха. Отель принимает гостей от 18 лет!",
                     fontSize = 18.sp, fontWeight = FontWeight.W200
                 )
@@ -432,7 +427,8 @@ fun ItemHotel(
                 .padding(top = 15.dp, bottom = 5.dp),
             shape = RoundedCornerShape(bottomStart = 50.dp, bottomEnd = 50.dp, topEnd = 15.dp , topStart = 15.dp),
             elevation = CardDefaults.cardElevation(5.dp)
-        ) {
+        )
+        {
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -458,8 +454,8 @@ fun ItemHotel(
                     .fillMaxHeight(),
                     shape = customShape,
                     colors = customColors,
-                    onClick = { android.util.Log.d("MyLog","ItemHotel.kt. ItemHotel: ${item.value?.name}")
-                        viewModel.getDataRoom();navController.navigate("Room/${item.value?.name}") })
+                    onClick = { android.util.Log.d("MyLog","ItemHotel.kt. ItemHotel: ${itemHostel.value?.name}")
+                        trig.value=!trig.value;navController.navigate("Room/${itemHostel.value?.name}") })
                 {
                     Text(
                         text = "К выбору номера"
@@ -473,35 +469,10 @@ fun ItemHotel(
 
     }
     }
-}
+    LaunchedEffect(trig.value)
+    {
+        viewModel.getDataRoom()
 
-
-@Preview(showBackground = true)
-@Composable
-fun ItemHotelPreview() {
-
-    val api = MockApi()
-    val repository = MockRepository(api)
-    val viewModel = MockViewModel(repository)
-    var  navController=rememberNavController()
-    ItemHotel(viewModel, navController)
-}
-
-class MockRepository(apiService: APIService) : Repository(apiService) {
-    // ...
-}
-
-class MockApi : APIService {
-    // ...
-    override suspend fun getDataHostel(): ApiResponse<Hostels> {
-        TODO("Not yet implemented")
-    }
-
-    override suspend fun getDataRoom(): ApiResponse<InfoRoom> {
-        TODO("Not yet implemented")
     }
 }
 
-class MockViewModel(repo: Repository) : ViewModel(repo) {
-    // ...
-}
