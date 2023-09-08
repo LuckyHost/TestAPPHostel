@@ -233,7 +233,7 @@ fun ItemHotel(
                 modifier = Modifier
                     .fillMaxWidth(1f)
 //                    .fillMaxHeight(0.5f)
-                    .padding(top = 5.dp),
+                    .padding(top = 5.dp, bottom = 5.dp),
                 elevation = CardDefaults.cardElevation(5.dp)
             )
             {
@@ -424,7 +424,7 @@ fun ItemHotel(
             modifier = Modifier
                 .fillMaxWidth(1f)
 //                    .fillMaxHeight(0.5f)
-                .padding(top = 15.dp, bottom = 5.dp),
+                .padding(top = 5.dp, bottom = 5.dp),
             shape = RoundedCornerShape(bottomStart = 50.dp, bottomEnd = 50.dp, topEnd = 15.dp , topStart = 15.dp),
             elevation = CardDefaults.cardElevation(5.dp)
         )

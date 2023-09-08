@@ -36,10 +36,13 @@ fun ItemReserve(viewModel: ViewModel, navController: NavHostController) {
     val fullPrice = remember { mutableStateOf(0) }
     var valuePhone by remember { mutableStateOf("") }
     var valueEmail by remember { mutableStateOf("") }
-    var listTourist by remember { mutableStateOf(listOf(Person()) )}
-    var testText by remember { mutableStateOf(false)    }
-    var trigLazy by remember { mutableStateOf(true)    }
-    val localContext= LocalContext.current
+    var listTourist by remember { mutableStateOf(listOf(Person())) }
+    var testText by remember { mutableStateOf(false) }
+    var trigError by remember { mutableStateOf(false) }
+    var inFocus by remember { mutableStateOf(false) }
+    val localContext = LocalContext.current
+
+
 
     Scaffold(
         topBar = {
@@ -403,8 +406,9 @@ fun ItemReserve(viewModel: ViewModel, navController: NavHostController) {
                             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Phone),
                             singleLine = true,
                             prefix = { Text(text = "+7") },
-                            modifier = Modifier.fillMaxWidth(0.8f),
-                            visualTransformation = PasswordVisualTransformation()
+                            modifier = Modifier
+                                .fillMaxWidth(0.8f)
+
                         )
                     }
                     Box(
@@ -421,7 +425,9 @@ fun ItemReserve(viewModel: ViewModel, navController: NavHostController) {
                             placeholder = { Text(text = "test@mail.com", color = Gray) },
                             singleLine = true,
                             modifier = Modifier
-                                .fillMaxWidth(0.8f),
+                                .fillMaxWidth(0.8f)
+                                .onFocusChanged { inFocus = it.isFocused },
+                            isError = trigError,
                             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
 
                             )
@@ -440,24 +446,11 @@ fun ItemReserve(viewModel: ViewModel, navController: NavHostController) {
                 }
             }
 
-
-
             Column{
-
-
-
-//                Text(text = testText.toString())
             listTourist.forEach( ){
                 ItemPerson(it)
             }
             }
-
-
-
-
-
-
-
 
             Card(
                 modifier = Modifier
@@ -469,7 +462,7 @@ fun ItemReserve(viewModel: ViewModel, navController: NavHostController) {
                 Box(
                     Modifier
                         .fillMaxWidth()
-                        .padding(10.dp)
+                        .padding(6.dp)
 
                 ) {
                     Row(
@@ -480,7 +473,6 @@ fun ItemReserve(viewModel: ViewModel, navController: NavHostController) {
                     {
 
                         Text(
-
                             text = "Добавить туриста",
                             fontSize = 25.sp, fontWeight = FontWeight.Medium
                         )
@@ -633,7 +625,7 @@ fun ItemReserve(viewModel: ViewModel, navController: NavHostController) {
                 modifier = Modifier
                     .fillMaxWidth()
 //                    .fillMaxHeight(0.5f)
-                    .padding(top = 15.dp, bottom = 5.dp),
+                    .padding(top = 5.dp, bottom = 5.dp),
                 shape = RoundedCornerShape(
                     bottomStart = 50.dp,
                     bottomEnd = 50.dp,
@@ -668,7 +660,7 @@ fun ItemReserve(viewModel: ViewModel, navController: NavHostController) {
                         .fillMaxHeight(),
                         shape = customShape,
                         colors = customColors,
-                        onClick = { }
+                        onClick = { viewModel.putDataList(listTourist);navController.navigate("Pay") }
                     )
                     {
                         Text(
@@ -685,8 +677,28 @@ fun ItemReserve(viewModel: ViewModel, navController: NavHostController) {
 
         }
     }
-}
 
+    LaunchedEffect(inFocus)
+    {
+        val regex = Regex("[а-яА-Я]+")
+        android.util.Log.d("MyLog","Reserve.kt. ItemReserve: ${regex.containsMatchIn(valueEmail)}")
+
+        if (valueEmail.length>1) {
+            if (!valueEmail.contains("@") ||!valueEmail.contains(".")
+                ||valueEmail.contains(" ") || valueEmail.contains("/")
+                || valueEmail.contains("\\")
+                || valueEmail.contains("\\")
+                || regex.containsMatchIn(valueEmail)
+                ) {
+                trigError = true
+            }
+            else
+            {
+                trigError = false
+            }
+        }
+    }
+}
 
 
 fun addTourist(list: List<Person>, localContext: Context, ):List<Person> {
@@ -697,7 +709,7 @@ fun addTourist(list: List<Person>, localContext: Context, ):List<Person> {
         mutablList.add(Person(id = newId+1))
         newList=mutablList.toList()
 
-        android.util.Log.d("MyLog","ItemReserve.kt. addTourist: $list")
+        android.util.Log.d("MyLog", "Reserve.kt. addTourist: $list")
 
 
     }

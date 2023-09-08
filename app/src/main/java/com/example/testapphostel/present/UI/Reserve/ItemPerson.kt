@@ -104,7 +104,7 @@ fun ItemPerson(person: Person) {
                     singleLine = true,
                     modifier = Modifier
                         .fillMaxWidth(0.8f),
-                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
+                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text),
 
                     )
             }
@@ -124,7 +124,7 @@ fun ItemPerson(person: Person) {
                     singleLine = true,
                     modifier = Modifier
                         .fillMaxWidth(0.8f),
-                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
+                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text),
 
                     )
             }
@@ -144,7 +144,7 @@ fun ItemPerson(person: Person) {
                     singleLine = true,
                     modifier = Modifier
                         .fillMaxWidth(0.8f),
-                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
+                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
 
                     )
             }
@@ -164,7 +164,7 @@ fun ItemPerson(person: Person) {
                     singleLine = true,
                     modifier = Modifier
                         .fillMaxWidth(0.8f),
-                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
+                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text),
 
                     )
             }
@@ -179,12 +179,12 @@ fun ItemPerson(person: Person) {
                 OutlinedTextField(
                     value = (text5),
                     onValueChange = { text5 = (it) },
-                    label = { Text(text = "Дата получения загран паспорта") },
+                    label = { Text(text = "Номер загранпаспорта") },
                     placeholder = { Text(text = "78-9658-95", color = Gray) },
                     singleLine = true,
                     modifier = Modifier
                         .fillMaxWidth(0.8f),
-                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
+                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
 
                     )
             }
@@ -204,7 +204,7 @@ fun ItemPerson(person: Person) {
                     singleLine = true,
                     modifier = Modifier
                         .fillMaxWidth(0.8f),
-                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
+                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
 
                     )
             }

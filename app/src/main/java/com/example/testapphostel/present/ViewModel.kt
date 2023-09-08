@@ -56,4 +56,9 @@ open class ViewModel @Inject constructor(
 
         }.join()
     }
+
+     fun putDataList(list: List<Person>)
+    {       //отправка листа
+
+    }
 }
